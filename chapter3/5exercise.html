@@ -283,12 +283,18 @@
 <h1>chapter3练习<a class="headerlink" href="#chapter3" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
 <h2>编程作业<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id2">
-<h3>简单安全检查<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<div class="section" id="syscall">
+<h3>syscall 参数检查<a class="headerlink" href="#syscall" title="永久链接至标题">¶</a></h3>
 <p>ch2 中，我们实现了第一个系统调用 <code class="docutils literal notranslate"><span class="pre">sys_write</span></code>，这使得我们可以在用户态输出信息。但是 os 在提供服务的同时，还有保护 os 本身以及其他用户程序不受错误或者恶意程序破坏的功能。</p>
 <p>由于还没有实现虚拟内存，我们可以在用户程序中指定一个属于其他程序字符串，并将它输出，这显然是不合理的，因此我们要对 sys_write 做检查：</p>
 <ul class="simple">
 <li><p>sys_write 仅能输出位于程序本身内存空间内的数据，否则报错。</p></li>
+</ul>
+<p>tips:</p>
+<ul class="simple">
+<li><p>想想当前一个应用程序拥有那些属于自己的空间？如何获得这些空间的位置？</p></li>
+<li><p>大胆修改已有框架！除了配置文件，你几乎可以随意修改已有框架的内容。</p></li>
+<li><p>可以看看 write 相关的测例是如何测试的。</p></li>
 </ul>
 </div>
 <div class="section" id="stride">
@@ -314,8 +320,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3>实验要求<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id2">
+<h3>实验要求<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>完成分支: ch3。</p></li>
 <li><p>通过所有测例：</p></li>
@@ -331,8 +337,8 @@
 <p>你的实现只需且必须通过测例，建议读者感到困惑时先检查测例。</p>
 </div>
 </div>
-<div class="section" id="id4">
-<h3>实验检查<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id3">
+<h3>实验检查<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>实验目录要求</p></li>
 </ul>
@@ -350,8 +356,8 @@
 <p>测试时 os/makefile 文件和 user 文件夹将被替换。</p>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>简答作业<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h2>简答作业<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <ol class="arabic">
 <li><p>为了方便 os 处理，Ｍ 态软件会将 S 态异常/中断委托给 S 态软件，请指出有哪些寄存器记录了委托信息，rustsbi 委托了哪些异常/中断？（RustSBI 在启动时输出了什么？）</p></li>
 <li><p>请通过 gdb 跟踪或阅读源代码了解机器从加电到跳转到 0x80200000 的过程，并描述重要的跳转。回答内核是如何进入 S 态的？</p>
@@ -425,8 +431,8 @@
 </li>
 </ol>
 </div>
-<div class="section" id="id7">
-<h2>报告要求<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h2>报告要求<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>简单总结你实现的功能（200字以内，不要贴代码）。</p></li>
 <li><p>完成问答题。</p></li>
@@ -491,14 +497,14 @@
             <ul>
 <li><a class="reference internal" href="#">chapter3练习</a><ul>
 <li><a class="reference internal" href="#id1">编程作业</a><ul>
-<li><a class="reference internal" href="#id2">简单安全检查</a></li>
+<li><a class="reference internal" href="#syscall">syscall 参数检查</a></li>
 <li><a class="reference internal" href="#stride">stride 调度算法</a></li>
-<li><a class="reference internal" href="#id3">实验要求</a></li>
-<li><a class="reference internal" href="#id4">实验检查</a></li>
+<li><a class="reference internal" href="#id2">实验要求</a></li>
+<li><a class="reference internal" href="#id3">实验检查</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id5">简答作业</a></li>
-<li><a class="reference internal" href="#id7">报告要求</a></li>
+<li><a class="reference internal" href="#id4">简答作业</a></li>
+<li><a class="reference internal" href="#id6">报告要求</a></li>
 </ul>
 </li>
 </ul>
