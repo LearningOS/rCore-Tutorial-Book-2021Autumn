@@ -381,9 +381,9 @@ curl https://sh.rustup.rs -sSf <span class="p">|</span> sh
 <div class="section" id="qemu">
 <h2>Qemu 模拟器安装<a class="headerlink" href="#qemu" title="永久链接至标题">¶</a></h2>
 <p>我们需要使用 Qemu 5.0.0 版本进行实验，为此，从源码手动编译安装 Qemu 模拟器：</p>
-<div class="admonition note">
-<p class="admonition-title">注解</p>
-<p>经初步测试，各系统软件源中的 Qemu 6 也可以运行本实验的框架，但由于实验基于 Qemu 5 开发，仍建议按照下方所述安装 Qemu 5.0 以避免未知的不兼容问题。</p>
+<div class="admonition attention">
+<p class="admonition-title">注意</p>
+<p>Qemu6 与我们使用的 RustSBI 存在未知不兼容问题！</p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装编译所需的依赖包</span>
 sudo apt install autoconf automake autotools-dev curl libmpc-dev libmpfr-dev libgmp-dev <span class="se">\</span>
@@ -431,7 +431,7 @@ qemu-riscv64 --version
 </div>
 <div class="section" id="rcore-tutorial">
 <h2>试运行 rCore-Tutorial<a class="headerlink" href="#rcore-tutorial" title="永久链接至标题">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/zhanghx0905/rCore-Tutorial-2021Autumn -b ch7
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/LearningOS/rCore-Tutorial-2021Autumn
 </pre></div>
 </div>
 <p>只需在 <code class="docutils literal notranslate"><span class="pre">os</span></code> 目录下 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">run</span></code> 即可。在内核加载完毕之后，可以看到目前可用的应用程序。 <code class="docutils literal notranslate"><span class="pre">usertests</span></code> 打包了其中的很大一部分，我们可以运行它，只需输入在终端中输入它的名字即可。</p>
