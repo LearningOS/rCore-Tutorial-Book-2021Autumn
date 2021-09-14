@@ -326,7 +326,8 @@
 <li><p>完成分支: ch3。</p></li>
 <li><p>通过所有测例：</p></li>
 </ul>
-<p>lab3 有 2 类测例，在 os 目录下执行 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">run</span> <span class="pre">TEST=1</span></code> 检查基本 syscall 的实现，执行 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">run</span> <span class="pre">TEST=2</span></code> 检查 stride 调度算法。</p>
+<p>lab3 有 3 类测例，在 os 目录下执行 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">run</span> <span class="pre">TEST=1</span></code> 检查基本 <code class="docutils literal notranslate"><span class="pre">sys_write</span></code> 安全检查的实现， <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">run</span> <span class="pre">TEST=2</span></code> 检查 <code class="docutils literal notranslate"><span class="pre">set_priority</span></code> 语义的正确性， <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">run</span> <span class="pre">TEST=3</span></code> 检查 stride 调度算法是否满足公平性要求，
+六个子程序运行的次数应该大致与其优先级呈正比。</p>
 <div class="admonition attention">
 <p class="admonition-title">注意</p>
 <p>为了让大家能在本编程作业中使用 <code class="docutils literal notranslate"><span class="pre">Vec</span></code> 等数据结构，我们利用第三方库 <code class="docutils literal notranslate"><span class="pre">buddy_system_allocator</span></code> 为大家实现了堆内存分配器，相关代码位于 <code class="docutils literal notranslate"><span class="pre">heap_alloc</span></code> 模块。</p>
