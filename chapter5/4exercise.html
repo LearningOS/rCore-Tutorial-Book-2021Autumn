@@ -326,9 +326,50 @@
 </div>
 <div class="section" id="id5">
 <h2>问答作业<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>fork + exec 的一个比较大的问题是 fork 之后的内存页/文件等资源完全没有使用就废弃了，针对这一点，有什么改进策略？</p></li>
 <li><p>[选做，不占分]其实使用了题(1)的策略之后，fork + exec 所带来的无效资源的问题已经基本被解决了，但是今年来 fork 还是在被不断的批判，那么到底是什么正在”杀死”fork？可以参考 <a class="reference external" href="https://www.microsoft.com/en-us/research/uploads/prod/2019/04/fork-hotos19.pdf">论文</a> 。</p></li>
+<li><p>请阅读代码并分析如下程序的输出，不考虑运行错误，不考虑行缓冲：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<dl>
+<dt>int main(){</dt><dd><p>int val = 2;</p>
+<p>printf(“%d”, 0);
+int pid = fork();
+if (pid == 0) {</p>
+<blockquote>
+<div><p>val++;
+printf(“%d”, val);</p>
+</div></blockquote>
+<dl class="simple">
+<dt>} else {</dt><dd><p>val–;
+printf(“%d”, val);
+wait(NULL);</p>
+</dd>
+</dl>
+<p>}
+val++;
+printf(“%d”, val);
+return 0;</p>
+</dd>
+</dl>
+<p>}</p>
+<p>如果 fork() 之后一定主程序先运行结果如何？如果 fork() 之后一定 child 先运行结果如何？</p>
+</li>
+<li><p>请分析如下程序运行后最终输出 <cite>A</cite> 的数量(已知 <code class="docutils literal notranslate"><span class="pre">||</span></code> 的优先级比 <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> 高)：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>int main() {</dt><dd><p>fork() &amp;&amp; fork() &amp;&amp; fork() || fork() &amp;&amp; fork() || fork() &amp;&amp; fork();
+printf(“A”);
+return 0’</p>
+</dd>
+</dl>
+<p>}</p>
+<p>[选做，不占分] 更进一步，如果给出一个 <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> <code class="docutils literal notranslate"><span class="pre">||</span></code> 的序列，你如何设计一个程序来得到答案？</p>
+</li>
 </ol>
 </div>
 <div class="section" id="id7">

@@ -462,12 +462,36 @@
 </div>
 <div class="section" id="id6">
 <h2>问答作业<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>举出使用 pipe 的一个实际应用的例子。</p></li>
+<li><p>共享内存的测例中有如下C语言片段(伪代码)：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>int main()
+{</p>
+<blockquote>
+<div><p>uint64 <a href="#id7"><span class="problematic" id="id8">*</span></a>A = (void <a href="#id9"><span class="problematic" id="id10">*</span></a>)0x10000000;
+uint64 <a href="#id11"><span class="problematic" id="id12">*</span></a>B = (void <a href="#id13"><span class="problematic" id="id14">*</span></a>)(0x10000000 + 0x1000);
+uint64 len = 0x1000;
+make_shmem(A, B, len); // 会将 [A, A + len) [B, B + len) 这两段虚存映射到同一段物理内存
+<a href="#id15"><span class="problematic" id="id16">*</span></a>A = 0xabab;
+__sync_synchronize();  // zssm？
+if(<a href="#id17"><span class="problematic" id="id18">*</span></a>B != 0xabab) {</p>
+<blockquote>
+<div><p>return ERROR;</p>
+</div></blockquote>
+<p>}
+printf(“OK!”);
+return 0;</p>
+</div></blockquote>
+<p>}</p>
+<p>请自己查阅注释 <code class="docutils literal notranslate"><span class="pre">zssm?</span></code> 对应的这一行代码有什么作用？如果去掉有可能会导致什么错误？为什么？</p>
+</li>
 </ol>
 </div>
-<div class="section" id="id7">
-<h2>报告要求<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id19">
+<h2>报告要求<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>简单总结你实现的功能（200字以内，不要贴代码）。</p></li>
 <li><p>完成问答题。</p></li>
@@ -539,7 +563,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#id6">问答作业</a></li>
-<li><a class="reference internal" href="#id7">报告要求</a></li>
+<li><a class="reference internal" href="#id19">报告要求</a></li>
 </ul>
 </li>
 </ul>
