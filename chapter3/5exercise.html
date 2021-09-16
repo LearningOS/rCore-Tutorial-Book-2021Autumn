@@ -363,7 +363,7 @@
 <li><p>为了方便 os 处理，Ｍ 态软件会将 S 态异常/中断委托给 S 态软件，请指出有哪些寄存器记录了委托信息，rustsbi 委托了哪些异常/中断？（RustSBI 在启动时输出了什么？）</p></li>
 <li><p>请通过 gdb 跟踪或阅读源代码了解机器从加电到跳转到 0x80200000 的过程，并描述重要的跳转。回答内核是如何进入 S 态的？</p>
 <ul class="simple">
-<li><p>事实上进入 rustsbi (0x80000000) 之后就不需要使用 gdb 调试了。可以直接阅读 <a class="reference external" href="https://github.com/rustsbi/rustsbi-qemu/blob/main/rustsbi-qemu/src/main.rs">代码</a> 。</p></li>
+<li><p>事实上进入 rustsbi (0x80000000) 之后就不需要使用 gdb 调试了。可以直接阅读 <a class="reference external" href="https://github.com/rustsbi/rustsbi-qemu/blob/7d71bfb7b3ad8e36f06f92c2ffe2066bbb0f9254/rustsbi-qemu/src/main.rs#L56">代码</a> 。</p></li>
 <li><p>可以使用 Makefile 中的 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">debug</span></code> 指令。</p></li>
 <li><dl class="simple">
 <dt>一些可能用到的 gdb 指令：</dt><dd><ul>
