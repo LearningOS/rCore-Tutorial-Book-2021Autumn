@@ -305,75 +305,57 @@
 </div>
 <div class="section" id="id3">
 <h3>实验要求<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
-<ul class="simple">
-<li><p>实现分支：ch5。</p></li>
-<li><p>通过所有测例。</p></li>
-</ul>
-</div>
-<div class="section" id="id4">
-<h3>实验检查<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <ul>
-<li><p>实验目录要求</p>
-<blockquote>
-<div><p>目录要求不变（参考 lab1 目录或者示例代码目录结构）。</p>
-</div></blockquote>
-</li>
-<li><p>检查</p></li>
-</ul>
+<li><p>实现分支：ch5。</p></li>
+<li><p>实验目录请参考 ch3。</p></li>
+<li><p>通过所有测例。</p>
 <p>在 os 目录下 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">run</span> <span class="pre">TEST=1</span></code> 加载所有测例， <code class="docutils literal notranslate"><span class="pre">test_usertest</span></code> 打包了所有你需要通过的测例，你也可以通过修改这个文件调整本地测试的内容。</p>
 <p>从本章开始，你的内核必须前向兼容，能通过前一章的所有测例。</p>
+</li>
+</ul>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>问答作业<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h2>问答作业<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <ol class="arabic">
 <li><p>fork + exec 的一个比较大的问题是 fork 之后的内存页/文件等资源完全没有使用就废弃了，针对这一点，有什么改进策略？</p></li>
 <li><p>[选做，不占分]其实使用了题(1)的策略之后，fork + exec 所带来的无效资源的问题已经基本被解决了，但是今年来 fork 还是在被不断的批判，那么到底是什么正在”杀死”fork？可以参考 <a class="reference external" href="https://www.microsoft.com/en-us/research/uploads/prod/2019/04/fork-hotos19.pdf">论文</a> 。</p></li>
-<li><p>请阅读代码并分析如下程序的输出，不考虑运行错误，不考虑行缓冲：</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
+<li><p>请阅读下列代码，并分析程序的输出，假定不发生运行错误，不考虑行缓冲：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">pid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fork</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">val</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">val</span><span class="o">--</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">wait</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">val</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<dl>
-<dt>int main(){</dt><dd><p>int val = 2;</p>
-<p>printf(“%d”, 0);
-int pid = fork();
-if (pid == 0) {</p>
-<blockquote>
-<div><p>val++;
-printf(“%d”, val);</p>
-</div></blockquote>
-<dl class="simple">
-<dt>} else {</dt><dd><p>val–;
-printf(“%d”, val);
-wait(NULL);</p>
-</dd>
-</dl>
-<p>}
-val++;
-printf(“%d”, val);
-return 0;</p>
-</dd>
-</dl>
-<p>}</p>
-<p>如果 fork() 之后一定主程序先运行结果如何？如果 fork() 之后一定 child 先运行结果如何？</p>
+<p>如果 fork() 之后主程序先运行，则结果如何？如果 fork() 之后 child 先运行，则结果如何？</p>
 </li>
-<li><p>请分析如下程序运行后最终输出 <cite>A</cite> 的数量(已知 <code class="docutils literal notranslate"><span class="pre">||</span></code> 的优先级比 <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> 高)：</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
+<li><p>请阅读下列代码，分析程序的输出 <code class="docutils literal notranslate"><span class="pre">A</span></code> 的数量：( <code class="docutils literal notranslate"><span class="pre">||</span></code> 的优先级比 <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> 高)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">fork</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">fork</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">fork</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">fork</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">fork</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">fork</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">fork</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<dl class="simple">
-<dt>int main() {</dt><dd><p>fork() &amp;&amp; fork() &amp;&amp; fork() || fork() &amp;&amp; fork() || fork() &amp;&amp; fork();
-printf(“A”);
-return 0’</p>
-</dd>
-</dl>
-<p>}</p>
-<p>[选做，不占分] 更进一步，如果给出一个 <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> <code class="docutils literal notranslate"><span class="pre">||</span></code> 的序列，你如何设计一个程序来得到答案？</p>
+<p>[选做，不占分] 更进一步，如果给出一个 <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> <code class="docutils literal notranslate"><span class="pre">||</span></code> 的序列，如何设计一个程序来得到答案？</p>
 </li>
 </ol>
 </div>
-<div class="section" id="id7">
-<h2>报告要求<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h2>报告要求<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>简单总结你实现的功能（200字以内，不要贴代码）。</p></li>
 <li><p>完成问答题（注意第二问选做）。</p></li>
@@ -440,11 +422,10 @@ return 0’</p>
 <li><a class="reference internal" href="#id1">编程作业</a><ul>
 <li><a class="reference internal" href="#id2">进程创建</a></li>
 <li><a class="reference internal" href="#id3">实验要求</a></li>
-<li><a class="reference internal" href="#id4">实验检查</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id5">问答作业</a></li>
-<li><a class="reference internal" href="#id7">报告要求</a></li>
+<li><a class="reference internal" href="#id4">问答作业</a></li>
+<li><a class="reference internal" href="#id6">报告要求</a></li>
 </ul>
 </li>
 </ul>

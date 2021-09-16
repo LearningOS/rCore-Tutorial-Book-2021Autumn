@@ -448,51 +448,43 @@
 </div>
 <div class="section" id="id4">
 <h3>实验要求<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
-<ul class="simple">
+<ul>
 <li><p>实现分支：ch6。</p></li>
-<li><p>修改 mmap 和 munmap 两个系统调用，并通过所有测例。</p></li>
-</ul>
+<li><p>实验目录要求不变。</p></li>
+<li><p>通过所有测例。</p>
 <p>在 os 目录下 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">run</span> <span class="pre">TEST=1</span></code> 加载所有测例， <code class="docutils literal notranslate"><span class="pre">test_usertest</span></code> 打包了所有你需要通过的测例，你也可以通过修改这个文件调整本地测试的内容。</p>
+<p>你的内核必须前向兼容，能通过前一章的所有测例。</p>
+</li>
+</ul>
+</div>
 </div>
 <div class="section" id="id5">
-<h3>实验检查<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
-<ul class="simple">
-<li><p>实验目录要求同 ch3</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="id6">
-<h2>问答作业<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>问答作业<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <ol class="arabic">
 <li><p>举出使用 pipe 的一个实际应用的例子。</p></li>
-<li><p>共享内存的测例中有如下C语言片段(伪代码)：</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
+<li><p>共享内存的测例中有如下片段(伪代码)：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">uint64</span><span class="w"> </span><span class="o">*</span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="mh">0x10000000</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">uint64</span><span class="w"> </span><span class="o">*</span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">)(</span><span class="mh">0x10000000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mh">0x1000</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">uint64</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x1000</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">make_shmem</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">len</span><span class="p">);</span><span class="w"> </span><span class="c1">// 将 [A, A + len) [B, B + len) 这两段虚存映射到同一段物理内存</span>
+<span class="w">    </span><span class="o">*</span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xabab</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">__sync_synchronize</span><span class="p">();</span><span class="w">  </span><span class="c1">// 这是什么？</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">*</span><span class="n">B</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mh">0xabab</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ERROR</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"OK!"</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>int main()
-{</p>
-<blockquote>
-<div><p>uint64 <a href="#id7"><span class="problematic" id="id8">*</span></a>A = (void <a href="#id9"><span class="problematic" id="id10">*</span></a>)0x10000000;
-uint64 <a href="#id11"><span class="problematic" id="id12">*</span></a>B = (void <a href="#id13"><span class="problematic" id="id14">*</span></a>)(0x10000000 + 0x1000);
-uint64 len = 0x1000;
-make_shmem(A, B, len); // 会将 [A, A + len) [B, B + len) 这两段虚存映射到同一段物理内存
-<a href="#id15"><span class="problematic" id="id16">*</span></a>A = 0xabab;
-__sync_synchronize();  // zssm？
-if(<a href="#id17"><span class="problematic" id="id18">*</span></a>B != 0xabab) {</p>
-<blockquote>
-<div><p>return ERROR;</p>
-</div></blockquote>
-<p>}
-printf(“OK!”);
-return 0;</p>
-</div></blockquote>
-<p>}</p>
-<p>请自己查阅注释 <code class="docutils literal notranslate"><span class="pre">zssm?</span></code> 对应的这一行代码有什么作用？如果去掉有可能会导致什么错误？为什么？</p>
+<p>请查阅相关资料，回答 <code class="docutils literal notranslate"><span class="pre">__sync_synchronize</span></code> 这行代码的作用，如果去掉它可能会导致什么错误？为什么？</p>
 </li>
 </ol>
 </div>
-<div class="section" id="id19">
-<h2>报告要求<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h2>报告要求<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>简单总结你实现的功能（200字以内，不要贴代码）。</p></li>
 <li><p>完成问答题。</p></li>
@@ -560,11 +552,10 @@ return 0;</p>
 <li><a class="reference internal" href="#id2">进程通信：邮箱</a></li>
 <li><a class="reference internal" href="#id3">[挑战，不占分]进程通信：共享内存</a></li>
 <li><a class="reference internal" href="#id4">实验要求</a></li>
-<li><a class="reference internal" href="#id5">实验检查</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id6">问答作业</a></li>
-<li><a class="reference internal" href="#id19">报告要求</a></li>
+<li><a class="reference internal" href="#id5">问答作业</a></li>
+<li><a class="reference internal" href="#id6">报告要求</a></li>
 </ul>
 </li>
 </ul>
