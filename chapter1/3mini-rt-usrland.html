@@ -283,10 +283,14 @@
 <span id="id1"></span><h1>构建用户态执行环境<a class="headerlink" href="#term-print-userminienv" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<div class="section" id="id2">
-<h2>用户态最小化执行环境<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>前三小节的用户态程序案例代码在 <a class="reference external" href="https://github.com/zhanghx0905/rust-no-std-examples">此处</a> 获取。</p>
+</div>
 <div class="section" id="id3">
-<h3>执行环境初始化<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<h2>用户态最小化执行环境<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3>执行环境初始化<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>首先我们要给 Rust 编译器编译器提供入口函数 <code class="docutils literal notranslate"><span class="pre">_start()</span></code> ，
 在 <code class="docutils literal notranslate"><span class="pre">main.rs</span></code> 中添加如下内容：</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// os/src/main.rs</span>
@@ -317,8 +321,8 @@
 这说明编译器生成的已经是一个合理的程序了。
 用 <code class="docutils literal notranslate"><span class="pre">qemu-riscv64</span> <span class="pre">target/riscv64gc-unknown-none-elf/debug/os</span></code> 命令可以执行这个程序。</p>
 </div>
-<div class="section" id="id4">
-<h3>程序正常退出<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id5">
+<h3>程序正常退出<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>我们把 <code class="docutils literal notranslate"><span class="pre">_start()</span></code> 函数中的循环语句注释掉，重新编译并分析，看到其汇编代码是：</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>rust-objdump -S target/riscv64gc-unknown-none-elf/debug/os
 
@@ -394,12 +398,12 @@
 <p>可以看到，返回的结果确实是 <code class="docutils literal notranslate"><span class="pre">9</span></code> 。这样，我们勉强完成了一个简陋的用户态最小化执行环境。</p>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>有显示支持的用户态执行环境<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h2>有显示支持的用户态执行环境<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>没有 <code class="docutils literal notranslate"><span class="pre">println</span></code> 输出信息，终究觉得缺了点啥。</p>
 <p>Rust 的 core 库内建了以一系列帮助实现显示字符的基本 Trait 和数据结构，函数等，我们可以对其中的关键部分进行扩展，就可以实现定制的 <code class="docutils literal notranslate"><span class="pre">println!</span></code> 功能。</p>
-<div class="section" id="id6">
-<h3>实现输出字符串的相关函数<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id7">
+<h3>实现输出字符串的相关函数<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <div class="admonition attention">
 <p class="admonition-title">注意</p>
 <p>如果你觉得理解 Rust 宏有困难，把它当成黑盒就好！</p>
@@ -520,13 +524,13 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">构建用户态执行环境</a><ul>
-<li><a class="reference internal" href="#id2">用户态最小化执行环境</a><ul>
-<li><a class="reference internal" href="#id3">执行环境初始化</a></li>
-<li><a class="reference internal" href="#id4">程序正常退出</a></li>
+<li><a class="reference internal" href="#id3">用户态最小化执行环境</a><ul>
+<li><a class="reference internal" href="#id4">执行环境初始化</a></li>
+<li><a class="reference internal" href="#id5">程序正常退出</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id5">有显示支持的用户态执行环境</a><ul>
-<li><a class="reference internal" href="#id6">实现输出字符串的相关函数</a></li>
+<li><a class="reference internal" href="#id6">有显示支持的用户态执行环境</a><ul>
+<li><a class="reference internal" href="#id7">实现输出字符串的相关函数</a></li>
 </ul>
 </li>
 </ul>
