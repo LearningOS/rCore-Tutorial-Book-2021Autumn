@@ -293,7 +293,6 @@
 <blockquote>
 <div><ul class="simple">
 <li><p>syscall ID：401</p></li>
-<li><p>C接口： <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">mailread(void*</span> <span class="pre">buf,</span> <span class="pre">int</span> <span class="pre">len)</span></code></p></li>
 <li><p>Rust接口: <code class="docutils literal notranslate"><span class="pre">fn</span> <span class="pre">mailread(buf:</span> <span class="pre">*mut</span> <span class="pre">u8,</span> <span class="pre">len:</span> <span class="pre">usize)</span></code></p></li>
 <li><p>功能：读取一个报文，如果成功返回报文长度.</p></li>
 <li><dl class="simple">
@@ -326,7 +325,6 @@
 <blockquote>
 <div><ul class="simple">
 <li><p>syscall ID：402</p></li>
-<li><p>C接口： <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">mailwrite(int</span> <span class="pre">pid,</span> <span class="pre">void*</span> <span class="pre">buf,</span> <span class="pre">int</span> <span class="pre">len)</span></code></p></li>
 <li><p>Rust接口: <code class="docutils literal notranslate"><span class="pre">fn</span> <span class="pre">mailwrite(pid:</span> <span class="pre">usize,</span> <span class="pre">buf:</span> <span class="pre">*mut</span> <span class="pre">u8,</span> <span class="pre">len:</span> <span class="pre">usize)</span></code></p></li>
 <li><p>功能：向对应进程邮箱插入一条报文.</p></li>
 <li><dl class="simple">
@@ -357,10 +355,13 @@
 </li>
 </ul>
 </div></blockquote>
-<p>实现完成之后，你应该能通过 ch6_mail* 对应的所有测例，在 shell 中执行 ch6_usertest 来执行所有测试。</p>
 </div>
 <div class="section" id="id3">
 <h3>[挑战，不占分]进程通信：共享内存<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>本来这才是本次实验的内容，大家觉得太难了，把它毙掉了。</p>
+</div>
 <p>进程间通信(IPC)对于某些系统和应用其实十分重要，它被称为微内核的 Achilles tendon，同时在 android 应用中也十分常见，为此 android 系统专门设计了一套 binder 机制来加速 IPC 的效率。</p>
 <p>最基础的 IPC 方式大致分两类：
 - 内核拷贝：指通过内核完成数据的拷贝，比如 pipe。

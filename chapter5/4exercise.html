@@ -287,11 +287,12 @@
 <h3>进程创建<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>大家一定好奇过为啥进程创建要用 fork + execve 这么一个奇怪的系统调用，就不能直接搞一个新进程吗？思而不学则殆，我们就来试一试！这章的编程练习请大家实现一个完全 DIY 的系统调用 spawn，用以创建一个新进程。</p>
 <p>spawn 系统调用定义( <a class="reference external" href="https://man7.org/linux/man-pages/man3/posix_spawn.3.html">标准spawn看这里</a> )：</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">fn</span> <span class="nf">sys_spawn</span><span class="p">(</span><span class="n">path</span>: <span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="kt">u8</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">isize</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p>syscall ID: 400</p></li>
-<li><p>C 接口： <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">spawn(char</span> <span class="pre">*filename)</span></code></p></li>
-<li><p>Rust 接口： <code class="docutils literal notranslate"><span class="pre">fn</span> <span class="pre">spawn(file:</span> <span class="pre">*const</span> <span class="pre">u8)</span> <span class="pre">-&gt;</span> <span class="pre">isize</span></code></p></li>
-<li><p>功能：相当于 fork + exec，新建子进程并执行目标程序。</p></li>
+<li><p>功能：新建子进程，使其执行目标程序。</p></li>
 <li><p>说明：成功返回子进程id，否则返回 -1。</p></li>
 <li><dl class="simple">
 <dt>可能的错误：</dt><dd><ul>
@@ -302,6 +303,7 @@
 </dl>
 </li>
 </ul>
+<p>TIPS：虽然测例很简单，但提醒读者 spawn <strong>不必</strong> 像 fork 一样复制父进程的地址空间。</p>
 </div>
 <div class="section" id="id3">
 <h3>实验要求<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
@@ -313,6 +315,10 @@
 <p>从本章开始，你的内核必须前向兼容，能通过前一章的所有测例。</p>
 </li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>利用 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cherry-pick</span></code> 系列指令，能方便地将前一章分支 commit 移植到本章分支。</p>
+</div>
 </div>
 </div>
 <div class="section" id="id4">
@@ -358,7 +364,7 @@
 <h2>报告要求<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>简单总结你实现的功能（200字以内，不要贴代码）。</p></li>
-<li><p>完成问答题（注意第二问选做）。</p></li>
+<li><p>完成问答题，看清楚选做。</p></li>
 <li><p>(optional) 你对本次实验设计及难度/工作量的看法，以及有哪些需要改进的地方，欢迎畅所欲言。</p></li>
 </ul>
 </div>

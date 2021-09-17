@@ -314,7 +314,9 @@
 <li><p>进程初始优先级设置为 16。</p></li>
 </ul>
 <p>为了实现该调度算法，内核还要增加 set_prio 系统调用</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// 输入参数：进程优先级，要求 prio &gt;= 2</span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// syscall ID：140</span>
+<span class="c1">// 设置当前进程优先级为 prio</span>
+<span class="c1">// 参数：prio 进程优先级，要求 prio &gt;= 2</span>
 <span class="c1">// 返回值：如果输入合法则返回 prio，否则返回 -1</span>
 <span class="k">fn</span> <span class="nf">sys_set_priority</span><span class="p">(</span><span class="n">prio</span>: <span class="kt">isize</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">isize</span><span class="p">;</span><span class="w"></span>
 </pre></div>
