@@ -286,50 +286,7 @@
 <div class="section" id="id2">
 <h3>硬链接<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>硬链接要求两个不同的目录项指向同一个文件，在我们的文件系统中也就是两个不同名称目录项指向同一个磁盘块。</p>
-<p>本节要求实现三个系统调用 <code class="docutils literal notranslate"><span class="pre">sys_linkat、sys_unlinkat、sys_stat</span></code> 。注意在测例中 <code class="docutils literal notranslate"><span class="pre">sys_open</span></code> 的接口定义也发生了变化。</p>
-<p><strong>open</strong></p>
-<blockquote>
-<div><ul>
-<li><p>syscall ID: 56</p></li>
-<li><p>功能：打开一个文件，并返回可以访问它的文件描述符。</p></li>
-<li><p>C 接口： <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">open(int</span> <span class="pre">dirfd,</span> <span class="pre">char*</span> <span class="pre">path,</span> <span class="pre">unsigned</span> <span class="pre">int</span> <span class="pre">flags,</span> <span class="pre">unsigned</span> <span class="pre">int</span> <span class="pre">mode);</span></code></p></li>
-<li><p>Rust 接口： <code class="docutils literal notranslate"><span class="pre">fn</span> <span class="pre">open(dirfd:</span> <span class="pre">usize,</span> <span class="pre">path:</span> <span class="pre">*const</span> <span class="pre">u8,</span> <span class="pre">flags:</span> <span class="pre">u32,</span> <span class="pre">mode:</span> <span class="pre">u32);</span></code></p></li>
-<li><dl>
-<dt>参数：</dt><dd><ul>
-<li><p><strong>dirfd</strong> : 仅为了兼容性考虑，本次实验中始终为 AT_FDCWD (-100)。可以忽略。</p></li>
-<li><p><strong>path</strong> 描述要打开的文件的文件名（简单起见，文件系统不需要支持目录，所有的文件都放在根目录 <code class="docutils literal notranslate"><span class="pre">/</span></code> 下）</p></li>
-<li><p><strong>flags</strong> 描述打开文件的标志，具体含义（其他参数不考虑）：</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define O_RDONLY  0x000</span>
-<span class="cp">#define O_WRONLY  0x001</span>
-<span class="cp">#define O_RDWR    0x002         </span><span class="c1">// 可读可写</span>
-<span class="cp">#define O_CREATE  0x200</span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>mode</strong> 表示创建文件的访问权限，为了简单，本次实验中中可忽略。</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>说明：</dt><dd><ul class="simple">
-<li><p>有 create 标志但文件存在时，忽略 create 标志，直接打开文件。</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>返回值：如果出现了错误则返回 -1，否则返回可以访问给定文件的文件描述符。</p></li>
-<li><dl class="simple">
-<dt>可能的错误：</dt><dd><ul class="simple">
-<li><p>文件不存在且无 create 标志。</p></li>
-<li><p>标志非法（低两位为 0x3）</p></li>
-<li><p>打开文件数量达到上限。</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</div></blockquote>
+<p>本节要求实现三个系统调用 <code class="docutils literal notranslate"><span class="pre">sys_linkat、sys_unlinkat、sys_stat</span></code> 。</p>
 <p><strong>linkat</strong>：</p>
 <blockquote>
 <div><ul class="simple">
