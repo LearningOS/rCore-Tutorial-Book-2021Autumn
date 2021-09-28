@@ -312,6 +312,7 @@
 <li><p>实验目录请参考 ch3。</p></li>
 <li><p>通过所有测例。</p>
 <p>在 os 目录下 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">run</span> <span class="pre">TEST=1</span></code> 加载所有测例， <code class="docutils literal notranslate"><span class="pre">test_usertest</span></code> 打包了所有你需要通过的测例，你也可以通过修改这个文件调整本地测试的内容。</p>
+<p>CI 的原理是用 <code class="docutils literal notranslate"><span class="pre">test_usertest</span></code> 替代 <code class="docutils literal notranslate"><span class="pre">initproc</span></code> ，使内核在所有测例执行完后直接退出。</p>
 <p>从本章开始，你的内核必须前向兼容，能通过前一章的所有测例。</p>
 </li>
 </ul>
