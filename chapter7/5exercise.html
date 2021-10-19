@@ -369,34 +369,44 @@
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[repr(C)]</span><span class="w"></span>
 <span class="cp">#[derive(Debug)]</span><span class="w"></span>
 <span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Stat</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="sd">/// 文件所在磁盘驱动器号，为简单起见，可固定为 0</span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">dev</span>: <span class="kt">u64</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="sd">/// inode 文件所在 inode 编号</span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">ino</span>: <span class="kt">u64</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="sd">/// 文件类型</span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">mode</span>: <span class="nc">StatMode</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="sd">/// 硬链接数量，初始为1</span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">nlink</span>: <span class="kt">u32</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="sd">/// 无需考虑，为了兼容性设计</span>
-<span class="w">    </span><span class="n">pad</span>: <span class="p">[</span><span class="kt">u64</span><span class="p">;</span><span class="w"> </span><span class="mi">7</span><span class="p">],</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="sd">/// StatMode 定义：</span>
-<span class="n">bitflags</span><span class="o">!</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">StatMode</span>: <span class="kt">u32</span> <span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">NULL</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="sd">/// directory</span>
-<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">DIR</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mo">0o040000</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="sd">/// ordinary regular file</span>
-<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">FILE</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mo">0o100000</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </dd>
 </dl>
 </li>
 </ul>
+</div></blockquote>
+<dl class="simple">
+<dt>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</dt><dd><p>/// 文件所在磁盘驱动器号，该实验中写死为 0 即可</p>
+</dd>
+</dl>
+<blockquote>
+<div><blockquote>
+<div><p>pub dev: u64,
+/// inode 文件所在 inode 编号
+pub ino: u64,
+/// 文件类型
+pub mode: StatMode,
+/// 硬链接数量，初始为1
+pub nlink: u32,
+/// 无需考虑，为了兼容性设计
+pad: [u64; 7],</p>
+</div></blockquote>
+<p>}</p>
+<p>/// StatMode 定义：
+bitflags! {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>pub struct StatMode: u32 {</dt><dd><p>const NULL  = 0;
+/// directory
+const DIR   = 0o040000;
+/// ordinary regular file
+const FILE  = 0o100000;</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
 </div></blockquote>
 </div>
 <div class="section" id="id3">
