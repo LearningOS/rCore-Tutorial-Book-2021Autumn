@@ -2,10 +2,10 @@
 <html class="no-js" lang="zh_CN">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="附录 A：Rust 系统编程资料" href="../appendix-a/index.html" /><link rel="prev" title="命令行参数与标准 I/O 重定向" href="4cmdargs-and-redirection.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="附录 A：Rust 系统编程资料" href="../appendix-a/index.html" /><link rel="prev" title="第八章：并发" href="index.html" />
 
     <meta name="generator" content="sphinx-4.1.2, furo 2021.08.31"/>
-        <title>chapter7练习 - rCore-Tutorial-Autumn2021 文档</title>
+        <title>chapter8练习 - rCore-Tutorial-Autumn2021 文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
@@ -215,43 +215,47 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter5/4exercise.html">chapter5练习</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/index.html">第六章：进程间通信</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter6/index.html">第七章：文件系统与I/O重定向</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter6/0intro.html">引言</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/1file-descriptor.html">基于文件的标准输入/输出</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/2pipe.html">管道</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter6/3exercise.html">chapter6练习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/1fs-interface.html">文件系统接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/2fs-implementation-1.html">简易文件系统 easy-fs (上)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/2fs-implementation-2.html">简易文件系统 easy-fs (下)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/3using-easy-fs-in-kernel.html">在内核中使用 easy-fs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/4cmdargs-and-redirection.html">命令行参数与标准 I/O 重定向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter6/5exercise.html">chapter7练习</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">第七章：文件系统与I/O重定向</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="0intro.html">引言</a></li>
-<li class="toctree-l2"><a class="reference internal" href="1fs-interface.html">文件系统接口</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2fs-implementation-1.html">简易文件系统 easy-fs (上)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2fs-implementation-2.html">简易文件系统 easy-fs (下)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3using-easy-fs-in-kernel.html">在内核中使用 easy-fs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4cmdargs-and-redirection.html">命令行参数与标准 I/O 重定向</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">chapter7练习</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter7/index.html">第六章：进程间通信</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/0intro.html">引言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/1file-descriptor.html">基于文件的标准输入/输出</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/2pipe.html">管道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter7/3exercise.html">chapter6练习</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">第八章：并发</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">chapter8练习</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">附录</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../appendix-a/index.html">附录 A：Rust 系统编程资料</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../appendix-a/index.html">附录 A：Rust 系统编程资料</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../appendix-b/index.html">附录 B：常见工具的使用方法</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../appendix-b/index.html">附录 B：常见工具的使用方法</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../appendix-c/index.html">附录 C：深入机器模式：RustSBI</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../appendix-c/index.html">附录 C：深入机器模式：RustSBI</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix-d/index.html">附录 D：RISC-V相关信息</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">开发注记</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../setup-sphinx.html">修改和构建本项目</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../setup-sphinx.html">修改和构建本项目</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../rest-example.html">reStructuredText 基本语法</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rest-example.html">reStructuredText 基本语法</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -279,150 +283,94 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <div class="section" id="chapter7">
-<h1>chapter7练习<a class="headerlink" href="#chapter7" title="永久链接至标题">¶</a></h1>
+        <div class="section" id="chapter8">
+<h1>chapter8练习<a class="headerlink" href="#chapter8" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
 <h2>编程作业<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id2">
-<h3>硬链接<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
-<p>硬链接要求两个不同的目录项指向同一个文件，在我们的文件系统中也就是两个不同名称目录项指向同一个磁盘块。</p>
-<p>本节要求实现三个系统调用 <code class="docutils literal notranslate"><span class="pre">sys_linkat、sys_unlinkat、sys_stat</span></code> 。</p>
-<p><strong>linkat</strong>：</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>syscall ID: 37</p></li>
-<li><p>功能：创建一个文件的一个硬链接， <a class="reference external" href="https://linux.die.net/man/2/linkat">linkat标准接口</a> 。</p></li>
-<li><p>Ｃ接口： <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">linkat(int</span> <span class="pre">olddirfd,</span> <span class="pre">char*</span> <span class="pre">oldpath,</span> <span class="pre">int</span> <span class="pre">newdirfd,</span> <span class="pre">char*</span> <span class="pre">newpath,</span> <span class="pre">unsigned</span> <span class="pre">int</span> <span class="pre">flags)</span></code></p></li>
-<li><p>Rust 接口： <code class="docutils literal notranslate"><span class="pre">fn</span> <span class="pre">linkat(olddirfd:</span> <span class="pre">i32,</span> <span class="pre">oldpath:</span> <span class="pre">*const</span> <span class="pre">u8,</span> <span class="pre">newdirfd:</span> <span class="pre">i32,</span> <span class="pre">newpath:</span> <span class="pre">*const</span> <span class="pre">u8,</span> <span class="pre">flags:</span> <span class="pre">u32)</span> <span class="pre">-&gt;</span> <span class="pre">i32</span></code></p></li>
-<li><dl class="simple">
-<dt>参数：</dt><dd><ul>
-<li><p>olddirfd，newdirfd: 仅为了兼容性考虑，本次实验中始终为 AT_FDCWD (-100)，可以忽略。</p></li>
-<li><p>flags: 仅为了兼容性考虑，本次实验中始终为 0，可以忽略。</p></li>
-<li><p>oldpath：原有文件路径</p></li>
-<li><p>newpath: 新的链接文件路径。</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>说明：</dt><dd><ul>
-<li><p>为了方便，不考虑新文件路径已经存在的情况（属于未定义行为），除非链接同名文件。</p></li>
-<li><p>返回值：如果出现了错误则返回 -1，否则返回 0。</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>可能的错误</dt><dd><ul>
-<li><p>链接同名文件。</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</div></blockquote>
-<p><strong>unlinkat</strong>:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>syscall ID: 35</p></li>
-<li><p>功能：取消一个文件路径到文件的链接, <a class="reference external" href="https://linux.die.net/man/2/unlinkat">unlinkat标准接口</a> 。</p></li>
-<li><p>Ｃ接口： <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">unlinkat(int</span> <span class="pre">dirfd,</span> <span class="pre">char*</span> <span class="pre">path,</span> <span class="pre">unsigned</span> <span class="pre">int</span> <span class="pre">flags)</span></code></p></li>
-<li><p>Rust 接口： <code class="docutils literal notranslate"><span class="pre">fn</span> <span class="pre">unlinkat(dirfd:</span> <span class="pre">i32,</span> <span class="pre">path:</span> <span class="pre">*const</span> <span class="pre">u8,</span> <span class="pre">flags:</span> <span class="pre">u32)</span> <span class="pre">-&gt;</span> <span class="pre">i32</span></code></p></li>
-<li><dl class="simple">
-<dt>参数：</dt><dd><ul>
-<li><p>dirfd: 仅为了兼容性考虑，本次实验中始终为 AT_FDCWD (-100)，可以忽略。</p></li>
-<li><p>flags: 仅为了兼容性考虑，本次实验中始终为 0，可以忽略。</p></li>
-<li><p>path：文件路径。</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>说明：</dt><dd><ul>
-<li><p>为了方便，不考虑使用 unlink 彻底删除文件的情况。</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>返回值：如果出现了错误则返回 -1，否则返回 0。</p></li>
-<li><dl class="simple">
-<dt>可能的错误</dt><dd><ul>
-<li><p>文件不存在。</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</div></blockquote>
-<p><strong>fstat</strong>:</p>
-<blockquote>
-<div><ul>
-<li><p>syscall ID: 80</p></li>
-<li><p>功能：获取文件状态。</p></li>
-<li><p>Ｃ接口： <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">fstat(int</span> <span class="pre">fd,</span> <span class="pre">struct</span> <span class="pre">Stat*</span> <span class="pre">st)</span></code></p></li>
-<li><p>Rust 接口： <code class="docutils literal notranslate"><span class="pre">fn</span> <span class="pre">fstat(fd:</span> <span class="pre">i32,</span> <span class="pre">st:</span> <span class="pre">*mut</span> <span class="pre">Stat)</span> <span class="pre">-&gt;</span> <span class="pre">i32</span></code></p></li>
-<li><dl>
-<dt>参数：</dt><dd><ul class="simple">
-<li><p>fd: 文件描述符</p></li>
-<li><p>st: 文件状态结构体</p></li>
-</ul>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[repr(C)]</span><span class="w"></span>
-<span class="cp">#[derive(Debug)]</span><span class="w"></span>
-<span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Stat</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="sd">/// 文件所在磁盘驱动器号，该实验中写死为 0 即可</span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">dev</span>: <span class="kt">u64</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="sd">/// inode 文件所在 inode 编号</span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">ino</span>: <span class="kt">u64</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="sd">/// 文件类型</span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">mode</span>: <span class="nc">StatMode</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="sd">/// 硬链接数量，初始为1</span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">nlink</span>: <span class="kt">u32</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="sd">/// 无需考虑，为了兼容性设计</span>
-<span class="w">    </span><span class="n">pad</span>: <span class="p">[</span><span class="kt">u64</span><span class="p">;</span><span class="w"> </span><span class="mi">7</span><span class="p">],</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="sd">/// StatMode 定义：</span>
-<span class="n">bitflags</span><span class="o">!</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">StatMode</span>: <span class="kt">u32</span> <span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">NULL</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="sd">/// directory</span>
-<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">DIR</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mo">0o040000</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="sd">/// ordinary regular file</span>
-<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">FILE</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mo">0o100000</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-</dd>
-</dl>
-</li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="id3">
-<h3>实验要求<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
-<ul>
-<li><p>实现分支：ch7。</p></li>
-<li><p>实验目录要求不变。</p></li>
-<li><p>通过所有测例。</p>
-<p>在 os 目录下 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">run</span> <span class="pre">TEST=1</span></code> 加载所有测例， <code class="docutils literal notranslate"><span class="pre">test_usertest</span></code> 打包了所有你需要通过的测例，你也可以通过修改这个文件调整本地测试的内容。</p>
-<p>你的内核必须前向兼容，能通过前一章的所有测例。</p>
-</li>
-</ul>
+<h3>银行家算法——分数更新<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p><strong>如何调试 easy-fs</strong></p>
-<p>如果你在第一章练习题中已经借助 <code class="docutils literal notranslate"><span class="pre">log</span></code> crate 实现了日志功能，那么你可以直接在 <code class="docutils literal notranslate"><span class="pre">easy-fs</span></code> 中引入 <code class="docutils literal notranslate"><span class="pre">log</span></code> crate，通过 <code class="docutils literal notranslate"><span class="pre">log::info!/debug!</span></code> 等宏即可进行调试并在内核中看到日志输出。具体来说，在 <code class="docutils literal notranslate"><span class="pre">easy-fs</span></code> 中的修改是：在 <code class="docutils literal notranslate"><span class="pre">easy-fs/Cargo.toml</span></code> 的依赖中加入一行 <code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">=</span> <span class="pre">"0.4.0"</span></code>，然后在 <code class="docutils literal notranslate"><span class="pre">easy-fs/src/lib.rs</span></code> 中加入一行 <code class="docutils literal notranslate"><span class="pre">extern</span> <span class="pre">crate</span> <span class="pre">log</span></code> 。</p>
-<p>你也可以完全在用户态进行调试。仿照 <code class="docutils literal notranslate"><span class="pre">easy-fs-fuse</span></code> 建立一个在当前操作系统中运行的应用程序，将测试逻辑写在 <code class="docutils literal notranslate"><span class="pre">main</span></code> 函数中。这个时候就可以将它引用的 <code class="docutils literal notranslate"><span class="pre">easy-fs</span></code> 的 <code class="docutils literal notranslate"><span class="pre">no_std</span></code> 去掉并使用 <code class="docutils literal notranslate"><span class="pre">println!</span></code> 进行调试。</p>
+<p>本实验为用户态实验，请在 Linux 环境下完成。</p>
 </div>
+<p>背景：在智能体大赛平台 <a class="reference external" href="https://www.saiblo.net">Saiblo</a> 网站上每打完一场双人天梯比赛后需要用 ELO 算法更新双方比分。由于 Saiblo 的评测机并发性很高，且 ELO 算法中的分值变动与双方变动前的分数有关，因此更新比分前时必须先为两位选手加锁。</p>
+<p>作业：请模拟一下上述分数更新过程，简便起见我们简化为有 p 位选手参赛（编号 [0, p) 或 [1, p] ），初始分值为 1000 分，有 m 个评测机线程（生产者）给出随机的评测结果（两位不同选手的编号以及胜负结果，结果可能为平局），有 n 个 worker 线程（消费者）获取结果队列并更新数据库（全局变量等共享数据）记录的分数。m 个评测机各自模拟 k 场对局结果后结束线程，全部对局比分更新完成后主线程打印每位选手最终成绩以及所有选手分数之和。</p>
+<p>上述参数 p、m、n、k 均为可配置参数（命令行传参或程序启动时从stdin输入）。</p>
+<p>简便起见不使用 ELO 算法，简化更新规则为：若不为平局，当 胜者分数 &gt;= 败者分数 时胜者 +20，败者 -20，否则胜者 +30，败者 -30；若为平局，分高者 -10，分低者+10（若本就同分保持则不变）。</p>
+<dl class="simple">
+<dt>消费者核心部分可参考如下伪码：</dt><dd><p>获取选手A的锁
+获取选手B的锁
+更新A、B分数
+睡眠 1ms（模拟数据库更新延时）
+释放选手B的锁
+释放选手A的锁</p>
+</dd>
+<dt>tips:</dt><dd><ul class="simple">
+<li><p>由于 ELO 以及本题中给出的简化更新算法均为零和算法，因此出现冲突后可以从所有选手分数之和明显看出来，正确处理时它应该永远为 1000p</p></li>
+<li><p>将一个 worker 线程看作哲学家，将 worker 正在处理的一场对局的两位选手看作两根筷子，则得到了经典的哲学家就餐问题</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="eventfd">
+<h3>实现 eventfd<a class="headerlink" href="#eventfd" title="永久链接至标题">¶</a></h3>
+<p>在 Linux 中有一种用于事件通知的文件描述符，称为 eventfd 。其核心是一个 64 位无符号整数的计数器，在非信号量模式下，若计数器值不为零，则 <cite>read</cite> 函数会从中读出计数值并将其清零，否则读取失败； <cite>write</cite> 函数将缓冲区中的数值加入到计数器中。在信号量模式下，若计数器值非零，则 <cite>read</cite> 操作将计数值减一，并返回 1 ； <cite>write</cite> 将计数值加一。我们将实现一个新的系统调用： <cite>sys_eventfd2</cite> 。</p>
+<p><strong>eventfd</strong>：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>syscall ID: 290</p></li>
+<li><p>功能：创建一个 eventfd， <a class="reference external" href="https://linux.die.net/man/2/eventfd">eventfd 标准接口</a> 。</p></li>
+<li><p>C 接口： <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">eventfd(unsigned</span> <span class="pre">int</span> <span class="pre">initval,</span> <span class="pre">int</span> <span class="pre">flags)</span></code></p></li>
+<li><p>Rust 接口： <code class="docutils literal notranslate"><span class="pre">fn</span> <span class="pre">eventfd(initval:</span> <span class="pre">u32,</span> <span class="pre">flags:</span> <span class="pre">i32)</span> <span class="pre">-&gt;</span> <span class="pre">i32</span></code></p></li>
+<li><dl class="simple">
+<dt>参数：</dt><dd><ul>
+<li><p>initval: 计数器的初值。</p></li>
+<li><dl class="simple">
+<dt>flags: 可以设置为 0 或以下两个 flag 的任意组合（按位或）：</dt><dd><ul>
+<li><p>EFD_SEMAPHORE (1) ：设置该 flag 时，将以信号量模式创建 eventfd 。</p></li>
+<li><p>EFD_NONBLOCK (2048) ：若设置该 flag ，对 eventfd 读写失败时会返回 -2 ，否则将阻塞等待直至读或写操作可执行为止。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>说明：</dt><dd><ul>
+<li><p>通过 <cite>write</cite> 写入 eventfd 时，缓冲区大小必须为 8 字节。</p></li>
+<li><p>进程 <cite>fork</cite> 时，子进程会继承父进程创建的 eventfd ，且指向同一个计数器。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>返回值：如果出现了错误则返回 -1，否则返回创建成功的 eventfd 编号。</p></li>
+<li><dl class="simple">
+<dt>可能的错误</dt><dd><ul>
+<li><p>flag 不合法。</p></li>
+<li><p>创建的文件描述符数量超过进程限制</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>还有一个 <cite>sys_eventfd</cite> 系统调用（调用号 284），与 <cite>sys_eventfd2</cite> 的区别在于前者不支持传入 flags 。</p>
+<p>Linux 中的原生异步 IO 接口 libaio 就使用了 eventfd 作为内核完成 IO 操作之后通知应用程序的机制。</p>
 </div>
 </div>
 <div class="section" id="id4">
-<h2>问答作业<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<ol class="arabic simple">
-<li><p>目前的文件系统只有单级目录，假设想要支持多级文件目录，请描述你设想的实现方式，描述合理即可。</p></li>
-<li><p>在有了多级目录之后，我们就也可以为一个目录增加硬链接了。在这种情况下，文件树中是否可能出现环路(软硬链接都可以，鼓励多尝试)？你认为应该如何解决？请在你喜欢的系统上实现一个环路，描述你的实现方式以及系统提示、实际测试结果。</p></li>
-</ol>
+<h3>实验要求<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>完成分支: ch8。</p></li>
+<li><p>实验目录要求不变。</p></li>
+<li><p>通过所有测例。</p></li>
+</ul>
+<p>你的内核必须前向兼容，能通过前一章的所有测例。</p>
+</div>
 </div>
 <div class="section" id="id5">
 <h2>报告要求<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
@@ -447,14 +395,14 @@
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="4cmdargs-and-redirection.html">
+          <a class="prev-page" href="index.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">命令行参数与标准 I/O 重定向</div>
+                <div class="title">第八章：并发</div>
                 
               </div>
             </a>
@@ -468,7 +416,7 @@
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             |
-            <a class="muted-link" href="../_sources/chapter7/5exercise.rst.txt"
+            <a class="muted-link" href="../_sources/chapter8/6exercise.rst.txt"
                rel="nofollow">
               显示源代码
             </a>
@@ -488,13 +436,13 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">chapter7练习</a><ul>
+<li><a class="reference internal" href="#">chapter8练习</a><ul>
 <li><a class="reference internal" href="#id1">编程作业</a><ul>
-<li><a class="reference internal" href="#id2">硬链接</a></li>
-<li><a class="reference internal" href="#id3">实验要求</a></li>
+<li><a class="reference internal" href="#id2">银行家算法——分数更新</a></li>
+<li><a class="reference internal" href="#eventfd">实现 eventfd</a></li>
+<li><a class="reference internal" href="#id4">实验要求</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id4">问答作业</a></li>
 <li><a class="reference internal" href="#id5">报告要求</a></li>
 </ul>
 </li>

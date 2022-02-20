@@ -2,10 +2,10 @@
 <html class="no-js" lang="zh_CN">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="第五章：进程及进程管理" href="../chapter5/index.html" /><link rel="prev" title="基于地址空间的分时多任务" href="6multitasking-based-on-as.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="chapter8练习" href="6exercise.html" /><link rel="prev" title="chapter6练习" href="../chapter7/3exercise.html" />
 
     <meta name="generator" content="sphinx-4.1.2, furo 2021.08.31"/>
-        <title>chapter4练习 - rCore-Tutorial-Autumn2021 文档</title>
+        <title>第八章：并发 - rCore-Tutorial-Autumn2021 文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
@@ -135,7 +135,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -198,13 +198,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/5exercise.html">chapter3练习</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">第四章：地址空间</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="0intro.html">引言</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3sv39-implementation-1.html">实现 SV39 多级页表机制（上）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4sv39-implementation-2.html">实现 SV39 多级页表机制（下）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5kernel-app-spaces.html">内核与应用的地址空间</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6multitasking-based-on-as.html">基于地址空间的分时多任务</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">chapter4练习</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter4/index.html">第四章：地址空间</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/0intro.html">引言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/3sv39-implementation-1.html">实现 SV39 多级页表机制（上）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/4sv39-implementation-2.html">实现 SV39 多级页表机制（下）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/5kernel-app-spaces.html">内核与应用的地址空间</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/6multitasking-based-on-as.html">基于地址空间的分时多任务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/7exercise.html">chapter4练习</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/index.html">第五章：进程及进程管理</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -232,8 +232,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter7/3exercise.html">chapter6练习</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter8/index.html">第八章：并发</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter8/6exercise.html">chapter8练习</a></li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">第八章：并发</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="6exercise.html">chapter8练习</a></li>
 </ul>
 </li>
 </ul>
@@ -278,149 +278,25 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <div class="section" id="chapter4">
-<h1>chapter4练习<a class="headerlink" href="#chapter4" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id1">
-<h2>编程作业<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<div class="section" id="sys-get-time">
-<h3>重写 sys_get_time<a class="headerlink" href="#sys-get-time" title="永久链接至标题">¶</a></h3>
-<p>引入虚存机制后，原来内核的 sys_get_time 函数实现就无效了。请你重写这个函数，恢复其正常功能。</p>
-</div>
-<div class="section" id="mmap-munmap">
-<h3>mmap 和 munmap 匿名映射<a class="headerlink" href="#mmap-munmap" title="永久链接至标题">¶</a></h3>
-<p><a class="reference external" href="https://man7.org/linux/man-pages/man2/mmap.2.html">mmap</a> 在 Linux 中主要用于在内存中映射文件，本次实验简化它的功能，仅用于申请内存。</p>
-<p>请实现 mmap 和 munmap 系统调用，mmap 定义如下：</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">fn</span> <span class="nf">sys_mmap</span><span class="p">(</span><span class="n">start</span>: <span class="kt">usize</span><span class="p">,</span><span class="w"> </span><span class="n">len</span>: <span class="kt">usize</span><span class="p">,</span><span class="w"> </span><span class="n">port</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">isize</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>syscall ID：222</p></li>
-<li><p>申请长度为 len 字节的物理内存（不要求实际物理内存位置，可以随便找一块），将其映射到 start 开始的虚存，内存页属性为 port</p></li>
-<li><dl class="simple">
-<dt>参数：</dt><dd><ul>
-<li><p>start 需要映射的虚存起始地址，要求按页对齐</p></li>
-<li><p>len 映射字节长度，可以为 0</p></li>
-<li><p>port：第 0 位表示是否可读，第 1 位表示是否可写，第 2 位表示是否可执行。其他位无效且必须为 0</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>返回值：执行成功则返回 0，错误返回 -1</p></li>
-<li><dl class="simple">
-<dt>说明：</dt><dd><ul>
-<li><p>为了简单，目标虚存区间要求按页对齐，len 可直接按页向上取整，不考虑分配失败时的页回收。</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>可能的错误：</dt><dd><ul>
-<li><p>start 没有按页大小对齐</p></li>
-<li><p>port &amp; !0x7 != 0 (port 其余位必须为0)</p></li>
-<li><p>port &amp; 0x7 = 0 (这样的内存无意义)</p></li>
-<li><p>[start, start + len) 中存在已经被映射的页</p></li>
-<li><p>物理内存不足</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<p>munmap 定义如下：</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">fn</span> <span class="nf">sys_munmap</span><span class="p">(</span><span class="n">start</span>: <span class="kt">usize</span><span class="p">,</span><span class="w"> </span><span class="n">len</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">isize</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>syscall ID：215</p></li>
-<li><p>取消到 [start, start + len) 虚存的映射</p></li>
-<li><p>参数和返回值请参考 mmap</p></li>
-<li><dl class="simple">
-<dt>说明：</dt><dd><ul>
-<li><p>为了简单，参数错误时不考虑内存的恢复和回收。</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>可能的错误：</dt><dd><ul>
-<li><p>[start, start + len) 中存在未被映射的虚存。</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<p>tips:</p>
-<ul class="simple">
-<li><p>一定要注意 mmap 是的页表项，注意 riscv 页表项的格式与 port 的区别。</p></li>
-<li><p>你增加 PTE_U 了吗？</p></li>
-</ul>
-</div>
-<div class="section" id="id2">
-<h3>实验要求<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
-<ul class="simple">
-<li><p>实现分支：ch4。</p></li>
-<li><p>实现 mmap 和 munmap 两个系统调用，通过所有测例。</p></li>
-</ul>
-<p>TIPS：注意 port 参数的语义，它与内核定义的 MapPermission 有明显不同！</p>
-</div>
-<div class="section" id="id3">
-<h3>实验要求<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+        <div class="section" id="id1">
+<h1>第八章：并发<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="toctree-wrapper compound">
 <ul>
-<li><p>实现分支：ch4。</p></li>
-<li><p>实验目录请参考 ch3，报告命名 lab2.md/pdf</p></li>
-<li><p>通过所有测例。</p>
-<p>在 os 目录下 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">run</span> <span class="pre">TEST=1</span></code> 测试 sys_get_time， <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">run</span> <span class="pre">TEST=2</span></code> 测试 map 和 unmap。</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="section" id="id4">
-<h2>问答作业<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<ol class="arabic">
-<li><p>请列举 SV39 页表页表项的组成，描述其中的标志位有何作用？</p></li>
-<li><dl>
-<dt>缺页</dt><dd><p>缺页指的是进程访问页面时页面不在页表中或在页表中无效的现象，此时 MMU 将会返回一个中断，告知 os 进程内存访问出了问题。os 选择填补页表并重新执行异常指令或者杀死进程。</p>
-<ul class="simple">
-<li><p>请问哪些异常可能是缺页导致的？</p></li>
-<li><p>发生缺页时，描述相关重要寄存器的值，上次实验描述过的可以简略。</p></li>
-</ul>
-<p>缺页有两个常见的原因，其一是 Lazy 策略，也就是直到内存页面被访问才实际进行页表操作。比如，一个程序被执行时，进程的代码段理论上需要从磁盘加载到内存。但是 os 并不会马上这样做，而是会保存 .text 段在磁盘的位置信息，在这些代码第一次被执行时才完成从磁盘的加载操作。</p>
-<ul class="simple">
-<li><p>这样做有哪些好处？</p></li>
-</ul>
-<p>其实，我们的 mmap 也可以采取 Lazy 策略，比如：一个用户进程先后申请了 10G 的内存空间，然后用了其中 1M 就直接退出了。按照现在的做法，我们显然亏大了，进行了很多没有意义的页表操作。</p>
-<ul class="simple">
-<li><p>处理 10G 连续的内存页面，对应的 SV39 页表大致占用多少内存 (估算数量级即可)？</p></li>
-<li><p>请简单思考如何才能实现 Lazy 策略，缺页时又如何处理？描述合理即可，不需要考虑实现。</p></li>
-</ul>
-<p>缺页的另一个常见原因是 swap 策略，也就是内存页面可能被换到磁盘上了，导致对应页面失效。</p>
-<ul class="simple">
-<li><p>此时页面失效如何表现在页表项(PTE)上？</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>双页表与单页表</p>
-<p>为了防范侧信道攻击，我们的 os 使用了双页表。但是传统的设计一直是单页表的，也就是说，用户线程和对应的内核线程共用同一张页表，只不过内核对应的地址只允许在内核态访问。(备注：这里的单/双的说法仅为自创的通俗说法，并无这个名词概念，详情见 <a class="reference external" href="https://en.wikipedia.org/wiki/Kernel_page-table_isolation">KPTI</a> )</p>
-<ul class="simple">
-<li><p>如何更换页表？</p></li>
-<li><p>单页表情况下，如何控制用户态无法访问内核页面？（tips:看看上一题最后一问）</p></li>
-<li><p>单页表有何优势？（回答合理即可）</p></li>
-<li><p>双页表实现下，何时需要更换页表？假设你写一个单页表操作系统，你会选择何时更换页表（回答合理即可）？</p></li>
+<li class="toctree-l1"><a class="reference internal" href="6exercise.html">chapter8练习</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="6exercise.html#id1">编程作业</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="6exercise.html#id2">银行家算法——分数更新</a></li>
+<li class="toctree-l3"><a class="reference internal" href="6exercise.html#eventfd">实现 eventfd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="6exercise.html#id4">实验要求</a></li>
 </ul>
 </li>
-</ol>
-</div>
-<div class="section" id="id5">
-<h2>报告要求<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
-<li><p>简单总结你实现的功能（200字以内，不要贴代码）。</p></li>
-<li><p>完成问答题。</p></li>
-<li><p>(optional) 你对本次实验设计及难度/工作量的看法，以及有哪些需要改进的地方，欢迎畅所欲言。</p></li>
+<li class="toctree-l2"><a class="reference internal" href="6exercise.html#id5">报告要求</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -429,23 +305,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../chapter5/index.html">
+          <a class="next-page" href="6exercise.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">第五章：进程及进程管理</div>
+                <div class="title">chapter8练习</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="6multitasking-based-on-as.html">
+          <a class="prev-page" href="../chapter7/3exercise.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">基于地址空间的分时多任务</div>
+                <div class="title">chapter6练习</div>
                 
               </div>
             </a>
@@ -459,7 +335,7 @@
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             |
-            <a class="muted-link" href="../_sources/chapter4/7exercise.rst.txt"
+            <a class="muted-link" href="../_sources/chapter8/index.rst.txt"
                rel="nofollow">
               显示源代码
             </a>
@@ -467,35 +343,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            目录
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">chapter4练习</a><ul>
-<li><a class="reference internal" href="#id1">编程作业</a><ul>
-<li><a class="reference internal" href="#sys-get-time">重写 sys_get_time</a></li>
-<li><a class="reference internal" href="#mmap-munmap">mmap 和 munmap 匿名映射</a></li>
-<li><a class="reference internal" href="#id2">实验要求</a></li>
-<li><a class="reference internal" href="#id3">实验要求</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id4">问答作业</a></li>
-<li><a class="reference internal" href="#id5">报告要求</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
