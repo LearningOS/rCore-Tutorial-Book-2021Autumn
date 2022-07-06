@@ -1,11 +1,11 @@
 // os/src/main.rs
 #![no_std]
 #![no_main]
-#![feature(asm)]
 #![feature(panic_info_message)]
 
 mod lang_item;
 
+use core::arch::asm;
 use core::fmt::{self, Write};
 struct Stdout;
 
